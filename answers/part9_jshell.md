@@ -25,12 +25,16 @@ s instanceof Circle c ? "Круг r=" + c.r() : "Не круг"
 ### Фактический вывод:
 
 ```
-(впишите результат выполнения каждой команды)
+| created interface Shape
+| created class Circle
+| created class Square
+s ==> Circle[r=5.0]
+$4 ==> "Круг r=5.0"
 ```
 
 ### Вопрос: Что произойдёт при попытке создать `record Triangle(double a) implements Shape {}`?
 
-**Ваш ответ:**
+**Ошибка компиляции**
 
 
 
@@ -54,14 +58,21 @@ pipeline2.apply("  hello world  ")
 ### Фактический вывод:
 
 ```
-(впишите результат)
+| imported package java.util.function
+trim ==> $Lambda$... (reference to String::trim)
+upper ==> $Lambda$... (reference to String::toUpperCase)
+exclaim ==> $Lambda$...
+pipeline1 ==> $Lambda$...
+pipeline2 ==> $Lambda$...
+$9 ==> "HELLO WORLD!"
+$10 ==> "HELLO WORLD!"
 ```
 
 ### Вопрос: Дают ли `andThen()` и `compose()` одинаковый результат? В каком случае результаты будут различаться?
 
 **Ваш ответ:**
 
-
+Они дают одинаковый результат, однако если результат будет отличаться если приоритет операций будет иметь значение
 
 ---
 
@@ -82,10 +93,17 @@ hashSet.getClass().getSimpleName()
 ### Фактический вывод:
 
 ```
-(впишите результат)
+| created enum Color
+enumSet ==> [RED, GREEN, BLUE]
+hashSet ==> [RED, GREEN, BLUE]
+$5 ==> true
+$6 ==> true
+$7 ==> "RegularEnumSet"
+$8 ==> "HashSet"
 ```
 
 ### Вопрос: Почему внутренний класс EnumSet называется `RegularEnumSet`? Что произойдёт, если enum будет иметь больше 64 констант?
 
 **Ваш ответ:**
 
+потому что количество наших enum < 64. При привышении будет создан JumboEnumSet который использует массив long[]

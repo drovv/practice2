@@ -17,13 +17,13 @@
 
 Для каждой строки (A–H) из `HRSystem.java` укажите:
 
-| Строка | Обращаемый член | Модификатор | Компилируется? (да/нет) | Причина |
-|--------|----------------|-------------|:-----------------------:|---------|
-| A | `emp.name` | | | |
-| B | `emp.age` | | | |
-| C | `emp.salary` | | | |
-| D | `emp.password` | | | |
-| E | `emp.getRole()` | | | |
-| F | `emp.promote(5000)` | | | |
-| G | `emp.printSummary()` | | | |
-| H | `emp.validatePassword("secret")` | | | |
+| Строка | Обращаемый член | Модификатор | Компилируется? (да/нет) | Причина                        |
+|--------|----------------|-------------|:-----------------------:|--------------------------------|
+| A | `emp.name` | public      |           YES           | доступен свободно              |
+| B | `emp.age` | protected   |           NO            | HRSystem не наследует Employee |
+| C | `emp.salary` | без         |           NO            | Доступен только в company.core                              |
+| D | `emp.password` | private     |           NO            |  Private, доступен только в Employee                              |
+| E | `emp.getRole()` | public      |           YES           | public, доступен свободно                               |
+| F | `emp.promote(5000)` | protected   |           NO            | HRSystem не наследует Employee                               |
+| G | `emp.printSummary()` | без         |           NO            | Доступен только в company.core                                |
+| H | `emp.validatePassword("secret")` | private     |           NO            | Private, доступен только в Employee                                |

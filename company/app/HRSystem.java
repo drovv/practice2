@@ -31,14 +31,14 @@ public class HRSystem {
 Для каждой строки (A–H) определите: скомпилируется ли она? Если нет — укажите причину (модификатор + пакет).
 Заполните таблицу:
 Строка	Компилируется?	Почему?
-A
-B
-C
-D
-E
-F
-G
-H
+A		Да              public, доступен свободно
+B       Нет             protected, HRSystem не наследует Employee
+C       Нет             Доступен только в company.core
+D       Нет             Private, доступен только в Employee
+E       Да              public, доступен свободно
+F       Нет             как и В, protected
+G       Нет             как и С private
+H       Нет             Private как и D
 
     */
 
